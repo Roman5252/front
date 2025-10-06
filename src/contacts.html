@@ -3,58 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты</title>
-    <link rel="stylesheet" href="../style/styles.css">
-    <style>
-        .big-text {
-            font-size: 20px;
-            font-weight: bolder;
-        }
-    </style>
+    <title>Контакты - Мой Сайт</title>
+    <meta name="description" content="Свяжитесь с нами через форму обратной связи для обсуждения вашего проекта">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Контакты - Мой Сайт">
+    <meta property="og:description" content="Свяжитесь с нами через форму обратной связи для обсуждения вашего проекта">
+    <meta property="og:image" content="../assets/hero-1200w.jpg">
 </head>
 <body>
-    <div class="page-container">
-        <header class="header">
-            <h1>Хэдер</h1>
-        </header>
-
-        <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <a href="index.html" class="header__logo">Мой Сайт</a>
+        
+        <nav class="header__nav nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="index.html" class="nav__link">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a href="about.html" class="nav__link">О нас</a>
+                </li>
+                <li class="nav__item">
+                    <a href="contacts.html" class="nav__link active">Контакты</a>
+                </li>
             </ul>
         </nav>
+    </header>
 
-        <main class="content">
-            <section class="contacts-container">
-                <h2 class="section-title">Контакты</h2>
-                
-                <div class="experience-grid">
-                    <article class="experience-card">
-                        <h3 class="big-text">Адрес электронной почты:</h3>
-                        <p class="experience-desc">pochemyyyy@yaya.bu</p>
-                    </article>
+    <!-- Уникальное основное содержимое страницы -->
+    <main>
+        <!-- Хлебные крошки -->
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a href="index.html" class="breadcrumbs__link">Главная</a>
+            <span class="breadcrumbs__separator">/</span>
+            <span class="breadcrumbs__current">Контакты</span>
+        </nav>
 
-                    <article class="experience-card">
-                        <h3 class="big-text">Адрес:</h3>
-                        <p class="experience-desc">там где нас нет</p>
-                    </article>
+        <h1>Наши контакты</h1>
+        
+        <section class="contact-info-section">
+            <h2>Контактная информация</h2>
+            
+            <div class="contact-details">
+                <p><strong>Телефон:</strong> +7 (123) 456-78-90</p>
+                <p><strong>Email:</strong> info@example.com</p>
+                <p><strong>Адрес:</strong> Москва, ул. Примерная, д. 1</p>
+                <p><strong>Режим работы:</strong> Пн-Пт с 9:00 до 18:00</p>
+                <p><strong>Социальные сети:</strong> 
+                    <a href="#" class="social-link">VK</a>, 
+                    <a href="#" class="social-link">Telegram</a>, 
+                    <a href="#" class="social-link">GitHub</a>
+                </p>
+            </div>
+            
+            <!-- Кнопка открытия модалки -->
+            <button id="openDialog" type="button" class="contact-btn">
+                Написать нам
+            </button>
+        </section>
 
-                    <article class="experience-card">
-                        <h3 class="big-text">Позвоните мне:</h3>
-                        <p class="experience-desc">
-                            <button class="plain-button">Не звоните мне</button>
-                        </p>
-                    </article>
+        <section class="map-section">
+            <h2>Как нас найти</h2>
+            <div class="map-placeholder">
+                <p>🚀 Здесь будет карта с нашим местоположением</p>
+                <p><small>(В реальном проекте здесь будет embedded карта Google Maps или Yandex Maps)</small></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно с формой обратной связи -->
+    <dialog id="contactDialog" aria-labelledby="dialogTitle">
+        <div class="dialog-content">
+            <h2 id="dialogTitle">Обратная связь</h2>
+            
+            <form id="contactForm" method="dialog" novalidate>
+                <div class="form-group">
+                    <label for="name">Имя *</label>
+                    <input id="name" name="name" type="text" required minlength="2" 
+                           autocomplete="given-name" aria-describedby="nameHelp">
+                    <small id="nameHelp">Минимум 2 символа</small>
                 </div>
-            </section>
-        </main>
 
-        <footer class="footer">
-            <p>Футер</p>
-        </footer>
-    </div>
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input id="email" name="email" type="email" required 
+                           autocomplete="email" aria-describedby="emailHelp">
+                    <small id="emailHelp">Например: name@example.com</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефон *</label>
+                    <input id="phone" name="phone" type="tel" inputmode="tel" 
+                           autocomplete="tel" aria-describedby="phoneHelp" 
+                           placeholder="+7 (___) __-__-__" required 
+                           pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+                    <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Дата обращения</label>
+                    <input id="date" name="date" type="date">
+                </div>
+
+                <div class="form-group">
+                    <label for="topic">Тема *</label>
+                    <select id="topic" name="topic" required>
+                        <option value="">Выберите тему</option>
+                        <option value="question">Вопрос</option>
+                        <option value="order">Заказ</option>
+                        <option value="cooperation">Сотрудничество</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Сообщение *</label>
+                    <textarea id="message" name="message" rows="4" required
+                              aria-describedby="messageHelp" placeholder="Опишите ваш вопрос или проект..."></textarea>
+                    <small id="messageHelp">Опишите ваш вопрос подробно</small>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="closeDialog" class="btn btn-secondary">
+                        Закрыть
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        Отправить
+                    </button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <p>&copy; 2025 Мой Сайт. Все права защищены.</p>
+        <p>Телефон: +7 (123) 456-78-90 | Email: info@example.com</p>
+    </footer>
+
+    <script src="../main.js"></script>
 </body>
 </html>
