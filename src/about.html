@@ -1,35 +1,107 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    ... <!-- Скопируйте весь блок <head> из index.html -->
-    <title>О нас - Название вашего сайта</title>
-    <meta name="description" content="Узнайте больше о нашей компании и истории">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - Мой Сайт</title>
+    <meta name="description" content="Узнайте больше о нашей компании, истории и команде профессионалов">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="О нас - Мой Сайт">
+    <meta property="og:description" content="Узнайте больше о нашей компании, истории и команде профессионалов">
+    <meta property="og:image" content="../assets/hero-1200w.jpg">
 </head>
 <body>
-    <header>
-        ... <!-- Скопируйте весь блок <header> из index.html -->
+    <header class="header">
+        <a href="index.html" class="header__logo">Мой Сайт</a>
+        
+        <nav class="header__nav nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="index.html" class="nav__link">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a href="about.html" class="nav__link active">О нас</a>
+                </li>
+                <li class="nav__item">
+                    <a href="contacts.html" class="nav__link">Контакты</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <!-- Простые "хлебные крошки" -->
-        <nav aria-label="Хлебные крошки">
-            <a href="index.html">Главная</a> →
-            <span>О нас</span>
+        <!-- Хлебные крошки -->
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a href="index.html" class="breadcrumbs__link">Главная</a>
+            <span class="breadcrumbs__separator">/</span>
+            <span class="breadcrumbs__current">О нас</span>
         </nav>
 
         <h1>О нашей компании</h1>
-        <section>
+        
+        <section class="history-section">
             <h2>Наша история</h2>
-            <p>Текст о том, как все начиналось...</p>
+            <p>Мы начали свой путь в 2020 году с небольшой команды энтузиастов, объединенных общей идеей - создавать качественные digital-продукты, которые решают реальные бизнес-задачи.</p>
+            
+            <p>За 5 лет мы выросли в надежного партнера для многих компаний, реализовали более 100 успешных проектов и продолжаем развиваться, следуя современным трендам в веб-разработке.</p>
         </section>
-        <section>
+        
+        <section class="team-section">
             <h2>Наша команда</h2>
-            <p>Текст о команде...</p>
+            <p>Наша команда состоит из опытных профессионалов, которые любят свое дело и постоянно развиваются:</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <h3>Фронтенд-разработчики</h3>
+                    <p>Специалисты по созданию пользовательских интерфейсов с использованием современных технологий.</p>
+                </div>
+                
+                <div class="team-member">
+                    <h3>Бэкенд-разработчики</h3>
+                    <p>Эксперты по серверной части приложений и архитектуре данных.</p>
+                </div>
+                
+                <div class="team-member">
+                    <h3>Дизайнеры</h3>
+                    <p>Творческие специалисты, создающие эстетичные и функциональные интерфейсы.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <h2>Наши ценности</h2>
+            <p>Мы верим в качество, прозрачность и долгосрочные отношения с клиентами. Каждый проект для нас - это возможность создать что-то уникальное и полезное.</p>
+        </section>
+
+        <!-- Видео секция -->
+        <section class="video-section">
+            <h2>Наше видео</h2>
+            <p>Посмотрите краткую презентацию о нашей компании:</p>
+            
+            <div class="video-container">
+                <video 
+                    class="video-player"
+                    controls 
+                    poster="../assets/video-poster.jpg"
+                    preload="metadata">
+                    <source src="../assets/presentation.mp4" type="video/mp4">
+                    <source src="../assets/presentation.webm" type="video/webm">
+                    <track src="../assets/subtitles.vtt" kind="subtitles" srclang="ru" label="Russian">
+                    Ваш браузер не поддерживает видео тег.
+                </video>
+            </div>
         </section>
     </main>
 
     <footer>
-        ... <!-- Скопируйте весь блок <footer> из index.html -->
+        <p>&copy; 2025 Мой Сайт. Все права защищены.</p>
+        <p>Телефон: +7 (123) 456-78-90 | Email: info@example.com</p>
     </footer>
+
+    <script src="../main.js"></script>
 </body>
 </html>

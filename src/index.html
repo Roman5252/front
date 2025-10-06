@@ -3,52 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная - Название вашего сайта</title>
-    <meta name="description" content="Краткое описание главной страницы вашего сайта">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <title>Главная - Мой Сайт</title>
+    <meta name="description" content="Добро пожаловать на наш сайт - мы создаем инновационные решения для вашего бизнеса">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Главная - Мой Сайт">
+    <meta property="og:description" content="Добро пожаловать на наш сайт - мы создаем инновационные решения для вашего бизнеса">
+    <meta property="og:image" content="../assets/hero-1200w.jpg">
 </head>
 <body>
     <!-- Шапка сайта -->
-    <header>
-        <a href="/">Логотип или название сайта</a>
-        <!-- Главное меню навигации -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
+    <header class="header">
+        <a href="index.html" class="header__logo">Мой Сайт</a>
+        
+        <nav class="header__nav nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="index.html" class="nav__link active">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a href="about.html" class="nav__link">О нас</a>
+                </li>
+                <li class="nav__item">
+                    <a href="contacts.html" class="nav__link">Контакты</a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <!-- Уникальное основное содержимое страницы -->
     <main>
-        <h1>Добро пожаловать на наш сайт!</h1>
+        <!-- Герой секция -->
+        <section class="hero">
+            <div class="hero__background">
+                <img 
+                    srcset="../assets/hero-320w.jpg 320w,
+                            ../assets/hero-768w.jpg 768w,
+                            ../assets/hero-1200w.jpg 1200w"
+                    sizes="(max-width: 320px) 280px,
+                           (max-width: 768px) 728px,
+                           1200px"
+                    src="../assets/hero-1200w.jpg" 
+                    alt="Главный баннер - команда профессионалов за работой"
+                    class="hero__image">
+                <div class="hero__overlay"></div>
+            </div>
+            
+            <div class="hero__content">
+                <h1 class="hero__title">Добро пожаловать на наш сайт!</h1>
+                <p class="hero__description">Мы создаем инновационные решения для вашего бизнеса</p>
+                <a href="#services" class="btn btn-primary hero__cta">Узнать больше</a>
+            </div>
+        </section>
 
-        <!-- Секция 1 с якорем -->
-        <section id="services">
+        <!-- Секция услуг -->
+        <section id="services" class="services-section">
             <h2>Наши услуги</h2>
-            <p>Описание предоставляемых услуг...</p>
-            <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
+            <p>Мы предлагаем широкий спектр услуг для развития вашего бизнеса:</p>
+            
+            <div class="services-grid">
+                <article class="service-card">
+                    <h3>Веб-разработка</h3>
+                    <p>Создаем современные и функциональные веб-сайты и приложения.</p>
+                </article>
+                
+                <article class="service-card">
+                    <h3>Дизайн интерфейсов</h3>
+                    <p>Разрабатываем интуитивно понятные и эстетичные пользовательские интерфейсы.</p>
+                </article>
+                
+                <article class="service-card">
+                    <h3>Консультации</h3>
+                    <p>Помогаем выбрать оптимальные технологические решения для ваших задач.</p>
+                </article>
+            </div>
+            
+            <a href="#contacts" class="btn btn-primary">Связаться с нами</a>
         </section>
 
-        <!-- Секция 2 с якорем -->
-        <section id="portfolio">
+        <!-- Секция портфолио -->
+        <section id="portfolio" class="portfolio-section">
             <h2>Портфолио</h2>
-            <p>Примеры наших работ...</p>
+            <p>Примеры наших последних работ:</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <h3>Корпоративный сайт</h3>
+                    <p>Разработка современного корпоративного портала для крупной компании.</p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <h3>Интернет-магазин</h3>
+                    <p>Создание полнофункциональной платформы для электронной коммерции.</p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <h3>Мобильное приложение</h3>
+                    <p>Разработка кроссплатформенного мобильного приложения.</p>
+                </div>
+            </div>
         </section>
 
-        <!-- Секция 3 с якорем -->
-        <section id="contacts">
+        <!-- Секция контактов -->
+        <section id="contacts" class="contacts-section">
             <h2>Контактная информация</h2>
-            <p>Наши контакты...</p>
-            <a href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
+            <p>Свяжитесь с нами для обсуждения вашего проекта:</p>
+            
+            <div class="contact-info">
+                <p><strong>Телефон:</strong> +7 (123) 456-78-90</p>
+                <p><strong>Email:</strong> info@example.com</p>
+                <p><strong>Адрес:</strong> Москва, ул. Примерная, д. 1</p>
+                <p><strong>Режим работы:</strong> Пн-Пт с 9:00 до 18:00</p>
+            </div>
+            
+            <a href="contacts.html" class="btn btn-primary">Подробнее</a>
         </section>
     </main>
+
     <!-- Подвал сайта -->
     <footer>
-        <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
-        <p>Телефон: +7 (123) 456-78-90</p>
+        <p>&copy; 2025 Мой Сайт. Все права защищены.</p>
+        <p>Телефон: +7 (123) 456-78-90 | Email: info@example.com</p>
     </footer>
+
+    <script src="../main.js"></script>
 </body>
 </html>
